@@ -62,6 +62,7 @@ type PileupParams = {
     stop: number
   };
   tracks: Track[];
+  controlsOff?: boolean;
 }
 
 function findReference(tracks: VisualizedTrack[]): ?VisualizedTrack {
@@ -94,7 +95,7 @@ function create(elOrId: string|Element, params: PileupParams): Pileup {
 
   var reactElement =
       ReactDOM.render(<Root referenceSource={referenceTrack.source}
-                            tracks={vizTracks}
+                            tracks={vizTracks} controlsOff={params.controlsOff}
                             initialRange={params.range} />, el);
 
   //if the element doesn't belong to document DOM observe DOM to detect
