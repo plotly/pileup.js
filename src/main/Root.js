@@ -17,6 +17,7 @@ type Props = {
   referenceSource: TwoBitSource;
   tracks: VisualizedTrack[];
   initialRange: GenomeRange;
+  controlsOff?: boolean;
 };
 
 type State = {
@@ -162,16 +163,22 @@ class Root extends React.Component<Props, State> {
     var trackEls = this.props.tracks.map((t, i) => this.makeDivForTrack(''+i, t));
     return (
       <div className='pileup-root'>
-        <div className='track controls'>
-          <div className='track-label'>
-            &nbsp;
-          </div>
-          <div className='track-content'>
-            <Controls contigList={this.state.contigList}
-                      range={this.state.range}
-                      onChange={this.handleRangeChange.bind(this)} />
-          </div>
-        </div>
+      {
+        this.props.controlsOff
+          ? null
+          : (
+            <div className='track controls'>
+              <div className='track-label'>
+                &nbsp;
+              </div>
+              <div className='track-content'>
+                <Controls contigList={this.state.contigList}
+                          range={this.state.range}
+                          onChange={this.handleRangeChange.bind(this)} />
+              </div>
+            </div>
+          )
+      }
         {trackEls}
       </div>
     );
