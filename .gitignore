@@ -29,7 +29,6 @@ node_modules
 
 # TypeScript
 typings
-dist
 
 # Genomics
 /*.2bit
