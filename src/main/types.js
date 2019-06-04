@@ -11,7 +11,7 @@
 
 // Public API
 
-import React from 'react';
+import {React} from './ShimDependencies';
 
 export const AllelFrequencyStrategy = {
   Minor : {name: "Minor"},

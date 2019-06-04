@@ -8,7 +8,7 @@ import type {GenomeRange} from './types';
 import type {TwoBitSource} from './sources/TwoBitDataSource';
 import type {VisualizedTrack, VizWithOptions} from './types';
 
-import React from 'react';
+import {React} from './ShimDependencies';
 import Controls from './Controls';
 import Menu from './Menu';
 import VisualizationWrapper from './VisualizationWrapper';

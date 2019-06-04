@@ -6,7 +6,7 @@
 
 import type {GenomeRange, PartialGenomeRange} from './types';
 
-import React from 'react';
+import {React} from './ShimDependencies';
 import _ from 'underscore';
 
 import utils from './utils';

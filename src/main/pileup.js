@@ -10,8 +10,7 @@ import type {State} from './types';
 
 import type {VizProps} from './VisualizationWrapper';
 import _ from 'underscore';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {React, ReactDOM} from './ShimDependencies';
 
 // Data sources
 import TwoBitDataSource from './sources/TwoBitDataSource';

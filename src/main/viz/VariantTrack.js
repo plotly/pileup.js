@@ -11,8 +11,7 @@ import type {DataCanvasRenderingContext2D} from 'data-canvas';
 import type {VizProps} from '../VisualizationWrapper';
 import type {Scale} from './d3utils';
 import type {State} from '../types';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {React, ReactDOM} from '../ShimDependencies';
 
 import d3utils from './d3utils';
 import shallowEquals from 'shallow-equals';

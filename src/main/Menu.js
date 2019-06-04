@@ -16,7 +16,7 @@
 
 'use strict';
 
-import React from 'react';
+import {React} from './ShimDependencies';
 
 type MenuItem = {
   key: string;

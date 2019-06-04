@@ -9,8 +9,7 @@ import type {TwoBitSource} from '../sources/TwoBitDataSource';
 import type {DataCanvasRenderingContext2D} from 'data-canvas';
 import type {Scale} from './d3utils';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {React, ReactDOM} from '../ShimDependencies';
 import shallowEquals from 'shallow-equals';
 import type {State} from '../types';
 
