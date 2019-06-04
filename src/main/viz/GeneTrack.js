@@ -14,8 +14,7 @@ import type {State} from '../types';
 import GenericFeature from '../data/genericFeature';
 import {GenericFeatureCache} from './GenericFeatureCache';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {React, ReactDOM} from '../ShimDependencies';
 import _ from 'underscore';
 import shallowEquals from 'shallow-equals';
 

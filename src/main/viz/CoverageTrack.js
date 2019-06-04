@@ -13,7 +13,7 @@ import type {Scale} from './d3utils';
 import type {State} from '../types';
 import type {VizProps} from '../VisualizationWrapper';
 
-import React from 'react';
+import {React} from '../ShimDependencies';
 import scale from '../scale';
 import shallowEquals from 'shallow-equals';
 import d3utils from './d3utils';

@@ -7,8 +7,7 @@
 import type {VizProps} from '../VisualizationWrapper';
 import type {Scale} from './d3utils';
 import type {State} from '../types';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {React, ReactDOM} from '../ShimDependencies';
 import EmptySource from '../sources/EmptySource';
 import canvasUtils from './canvas-utils';
 import dataCanvas from 'data-canvas';

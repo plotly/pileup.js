@@ -7,8 +7,7 @@
 import type {TwoBitSource} from './sources/TwoBitDataSource';
 import type {GenomeRange, VizWithOptions} from './types';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {React, ReactDOM} from './ShimDependencies';
 import d3utils from './viz/d3utils';
 import _ from 'underscore';
 import d3 from '../lib/minid3';
