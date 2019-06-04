@@ -9,9 +9,8 @@
 
 
 
-'underscore');var _underscore2 = _interopRequireDefault(_underscore);var _react = require(
-'react');var _react2 = _interopRequireDefault(_react);var _reactDom = require(
-'react-dom');var _reactDom2 = _interopRequireDefault(_reactDom);
+'underscore');var _underscore2 = _interopRequireDefault(_underscore);var _ShimDependencies = require(
+'./ShimDependencies');
 
 // Data sources
 var _sourcesTwoBitDataSource = require('./sources/TwoBitDataSource');var _sourcesTwoBitDataSource2 = _interopRequireDefault(_sourcesTwoBitDataSource);var _sourcesBigBedDataSource = require(
@@ -94,7 +93,7 @@ function create(elOrId, params) {
 
 
   var reactElement = 
-  _reactDom2['default'].render(_react2['default'].createElement(_Root2['default'], { referenceSource: referenceTrack.source, 
+  _ShimDependencies.ReactDOM.render(_ShimDependencies.React.createElement(_Root2['default'], { referenceSource: referenceTrack.source, 
     tracks: vizTracks, controlsOff: params.controlsOff, 
     initialRange: params.range }), el);
 
@@ -159,7 +158,7 @@ function create(elOrId, params) {
       vizTracks.forEach(function (_ref) {var source = _ref.source;
         source.off();});
 
-      _reactDom2['default'].unmountComponentAtNode(el);
+      _ShimDependencies.ReactDOM.unmountComponentAtNode(el);
       reactElement = null;
       referenceTrack = null;
       vizTracks = null;

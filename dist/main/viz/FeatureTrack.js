@@ -7,14 +7,14 @@
 
 '../data/feature');var _dataFeature2 = _interopRequireDefault(_dataFeature);var _dataGenericFeature = require(
 '../data/genericFeature');var _dataGenericFeature2 = _interopRequireDefault(_dataGenericFeature);var _GenericFeatureCache = require(
-'./GenericFeatureCache');var _react = require(
+'./GenericFeatureCache');var _ShimDependencies = require(
 
 
 
 
 
 
-'react');var _react2 = _interopRequireDefault(_react);var _shallowEquals = require(
+'../ShimDependencies');var _shallowEquals = require(
 'shallow-equals');var _shallowEquals2 = _interopRequireDefault(_shallowEquals);var _underscore = require(
 'underscore');var _underscore2 = _interopRequireDefault(_underscore);var _d3utils = require(
 
@@ -120,8 +120,8 @@ FeatureTrack = (function (_React$Component) {_inherits(FeatureTrack, _React$Comp
       networkStatus = this.state.networkStatus;
       if (networkStatus) {
         statusEl = 
-        _react2['default'].createElement('div', { ref: 'status', className: 'network-status-small' }, 
-        _react2['default'].createElement('div', { className: 'network-status-message-small' }, 'Loading features…'));}
+        _ShimDependencies.React.createElement('div', { ref: 'status', className: 'network-status-small' }, 
+        _ShimDependencies.React.createElement('div', { className: 'network-status-message-small' }, 'Loading features…'));}
 
 
 
@@ -131,19 +131,19 @@ FeatureTrack = (function (_React$Component) {_inherits(FeatureTrack, _React$Comp
       // If range is too large, do not render 'canvas'
       if (rangeLength > _RemoteRequest2['default'].MONSTER_REQUEST) {
         return (
-          _react2['default'].createElement('div', null, 
-          _react2['default'].createElement('div', { className: 'center' }, 'Zoom in to see features'), 
+          _ShimDependencies.React.createElement('div', null, 
+          _ShimDependencies.React.createElement('div', { className: 'center' }, 'Zoom in to see features'), 
 
 
-          _react2['default'].createElement('canvas', { onClick: this.handleClick.bind(this) })));} else 
+          _ShimDependencies.React.createElement('canvas', { onClick: this.handleClick.bind(this) })));} else 
 
 
       {
         return (
-          _react2['default'].createElement('div', null, 
+          _ShimDependencies.React.createElement('div', null, 
           statusEl, 
-          _react2['default'].createElement('div', { ref: 'container', style: containerStyles }, 
-          _react2['default'].createElement('canvas', { ref: 'canvas', onClick: this.handleClick.bind(this) }))));}} }, { key: 'componentDidMount', value: 
+          _ShimDependencies.React.createElement('div', { ref: 'container', style: containerStyles }, 
+          _ShimDependencies.React.createElement('canvas', { ref: 'canvas', onClick: this.handleClick.bind(this) }))));}} }, { key: 'componentDidMount', value: 
 
 
 
@@ -251,7 +251,7 @@ FeatureTrack = (function (_React$Component) {_inherits(FeatureTrack, _React$Comp
             'range': feature.position.contig + ':' + feature.position.start() + '-' + feature.position.stop(), 
             'score': feature.score });
 
-          alert(JSON.stringify(messageObject, null, '  '));}}} }]);return FeatureTrack;})(_react2['default'].Component);
+          alert(JSON.stringify(messageObject, null, '  '));}}} }]);return FeatureTrack;})(_ShimDependencies.React.Component);
 
 
 

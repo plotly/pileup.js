@@ -6,14 +6,14 @@
 
 
 
-'../data/feature');var _dataFeature2 = _interopRequireDefault(_dataFeature);var _react = require(
+'../data/feature');var _dataFeature2 = _interopRequireDefault(_dataFeature);var _ShimDependencies = require(
 
 
 
 
 
 
-'react');var _react2 = _interopRequireDefault(_react);var _scale = require(
+'../ShimDependencies');var _scale = require(
 '../scale');var _scale2 = _interopRequireDefault(_scale);var _shallowEquals = require(
 'shallow-equals');var _shallowEquals2 = _interopRequireDefault(_shallowEquals);var _d3utils = require(
 './d3utils');var _d3utils2 = _interopRequireDefault(_d3utils);var _underscore = require(
@@ -194,7 +194,7 @@ CoverageTrack = (function (_React$Component) {_inherits(CoverageTrack, _React$Co
 
 
     function render() {
-      return _react2['default'].createElement('canvas', { ref: 'canvas', onClick: this.handleClick.bind(this) });} }, { key: 'getScale', value: 
+      return _ShimDependencies.React.createElement('canvas', { ref: 'canvas', onClick: this.handleClick.bind(this) });} }, { key: 'getScale', value: 
 
 
     function getScale() {
@@ -322,7 +322,7 @@ CoverageTrack = (function (_React$Component) {_inherits(CoverageTrack, _React$Co
 
         bin.mismatches);
         messageObject[ref] = bin.count - mmCount;
-        alert(JSON.stringify(messageObject, null, '  '));}} }]);return CoverageTrack;})(_react2['default'].Component);
+        alert(JSON.stringify(messageObject, null, '  '));}} }]);return CoverageTrack;})(_ShimDependencies.React.Component);
 
 
 

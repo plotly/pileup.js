@@ -12,10 +12,9 @@
 
 
 '../data/genericFeature');var _dataGenericFeature2 = _interopRequireDefault(_dataGenericFeature);var _GenericFeatureCache = require(
-'./GenericFeatureCache');var _react = require(
+'./GenericFeatureCache');var _ShimDependencies = require(
 
-'react');var _react2 = _interopRequireDefault(_react);var _reactDom = require(
-'react-dom');var _reactDom2 = _interopRequireDefault(_reactDom);var _underscore = require(
+'../ShimDependencies');var _underscore = require(
 'underscore');var _underscore2 = _interopRequireDefault(_underscore);var _shallowEquals = require(
 'shallow-equals');var _shallowEquals2 = _interopRequireDefault(_shallowEquals);var _dataBedtools = require(
 
@@ -88,7 +87,7 @@ GeneTrack = (function (_React$Component) {_inherits(GeneTrack, _React$Component)
 
 
     function render() {
-      return _react2['default'].createElement('canvas', null);} }, { key: 'componentDidMount', value: 
+      return _ShimDependencies.React.createElement('canvas', null);} }, { key: 'componentDidMount', value: 
 
 
     function componentDidMount() {var _this = this;
@@ -125,7 +124,7 @@ GeneTrack = (function (_React$Component) {_inherits(GeneTrack, _React$Component)
 
 
     function updateVisualization() {
-      var canvas = _reactDom2['default'].findDOMNode(this);var _props = 
+      var canvas = _ShimDependencies.ReactDOM.findDOMNode(this);var _props = 
       this.props;var width = _props.width;var height = _props.height;
       var genomeRange = this.props.range;
 
@@ -194,7 +193,7 @@ GeneTrack = (function (_React$Component) {_inherits(GeneTrack, _React$Component)
           ctx.popObject();});}
 
       // end typecheck for canvasß
-    } }]);return GeneTrack;})(_react2['default'].Component);
+    } }]);return GeneTrack;})(_ShimDependencies.React.Component);
 
 
 GeneTrack.displayName = 'genes';

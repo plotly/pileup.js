@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports, '__esModule', { value: true });var _createClass = (function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};})();var _get = function get(_x, _x2, _x3) {var _again = true;_function: while (_again) {var object = _x, property = _x2, receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {var parent = Object.getPrototypeOf(object);if (parent === null) {return undefined;} else {_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;}} else if ('value' in desc) {return desc.value;} else {var getter = desc.get;if (getter === undefined) {return undefined;}return getter.call(receiver);}}};function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass, superClass) {if (typeof superClass !== 'function' && superClass !== null) {throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var _react = require(
+'use strict';Object.defineProperty(exports, '__esModule', { value: true });var _createClass = (function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};})();var _get = function get(_x, _x2, _x3) {var _again = true;_function: while (_again) {var object = _x, property = _x2, receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {var parent = Object.getPrototypeOf(object);if (parent === null) {return undefined;} else {_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;}} else if ('value' in desc) {return desc.value;} else {var getter = desc.get;if (getter === undefined) {return undefined;}return getter.call(receiver);}}};function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass, superClass) {if (typeof superClass !== 'function' && superClass !== null) {throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var _ShimDependencies = require(
 
 
 
@@ -7,8 +7,7 @@
 
 
 
-'react');var _react2 = _interopRequireDefault(_react);var _reactDom = require(
-'react-dom');var _reactDom2 = _interopRequireDefault(_reactDom);var _vizD3utils = require(
+'./ShimDependencies');var _vizD3utils = require(
 './viz/d3utils');var _vizD3utils2 = _interopRequireDefault(_vizD3utils);var _underscore = require(
 'underscore');var _underscore2 = _interopRequireDefault(_underscore);var _libMinid3 = require(
 '../lib/minid3');var _libMinid32 = _interopRequireDefault(_libMinid3);var 
@@ -54,7 +53,7 @@ VisualizationWrapper = (function (_React$Component) {_inherits(VisualizationWrap
 
 
     function updateSize() {
-      var thisNode = _reactDom2['default'].findDOMNode(this);
+      var thisNode = _ShimDependencies.ReactDOM.findDOMNode(this);
       if (thisNode && thisNode instanceof Element) {// check for getContext
         var parentDiv = thisNode.parentNode;
         if (parentDiv && parentDiv instanceof HTMLElement) {// check for getContext
@@ -92,7 +91,7 @@ VisualizationWrapper = (function (_React$Component) {_inherits(VisualizationWrap
 
     function addDragInterface() {var _this2 = this;
       this.hasDragBeenInitialized = true;
-      var div = _reactDom2['default'].findDOMNode(this);
+      var div = _ShimDependencies.ReactDOM.findDOMNode(this);
       var originalRange, originalScale, dx = 0;
       var dragstarted = function dragstarted() {
         _libMinid32['default'].event.sourceEvent.stopPropagation();
@@ -148,14 +147,14 @@ VisualizationWrapper = (function (_React$Component) {_inherits(VisualizationWrap
       var component = this.props.visualization.component;
       if (!range) {
         if (component.displayName != null) 
-        return _react2['default'].createElement(EmptyTrack, { className: component.displayName });else 
+        return _ShimDependencies.React.createElement(EmptyTrack, { className: component.displayName });else 
 
-        return _react2['default'].createElement(EmptyTrack, { className: 'EmptyTrack' });}
+        return _ShimDependencies.React.createElement(EmptyTrack, { className: 'EmptyTrack' });}
 
 
       var options = _underscore2['default'].extend(_underscore2['default'].clone(this.props.visualization.options), this.props.options);
 
-      var el = _react2['default'].createElement(component, { 
+      var el = _ShimDependencies.React.createElement(component, { 
         range: range, 
         source: this.props.source, 
         referenceSource: this.props.referenceSource, 
@@ -164,7 +163,7 @@ VisualizationWrapper = (function (_React$Component) {_inherits(VisualizationWrap
         options: options });
 
 
-      return _react2['default'].createElement('div', { className: 'drag-wrapper' }, el);} }]);return VisualizationWrapper;})(_react2['default'].Component);
+      return _ShimDependencies.React.createElement('div', { className: 'drag-wrapper' }, el);} }]);return VisualizationWrapper;})(_ShimDependencies.React.Component);
 
 
 VisualizationWrapper.displayName = 'VisualizationWrapper';var 
@@ -174,7 +173,7 @@ VisualizationWrapper.displayName = 'VisualizationWrapper';var
 EmptyTrack = (function (_React$Component2) {_inherits(EmptyTrack, _React$Component2);function EmptyTrack() {_classCallCheck(this, EmptyTrack);_get(Object.getPrototypeOf(EmptyTrack.prototype), 'constructor', this).apply(this, arguments);}_createClass(EmptyTrack, [{ key: 'render', value: 
     function render() {
       var className = this.props.className + ' empty';
-      return _react2['default'].createElement('div', { className: className });} }]);return EmptyTrack;})(_react2['default'].Component);
+      return _ShimDependencies.React.createElement('div', { className: className });} }]);return EmptyTrack;})(_ShimDependencies.React.Component);
 
 
 

@@ -2,13 +2,13 @@
  * Root of the React component tree.
  * 
  */
-'use strict';var _createClass = (function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};})();var _get = function get(_x, _x2, _x3) {var _again = true;_function: while (_again) {var object = _x, property = _x2, receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {var parent = Object.getPrototypeOf(object);if (parent === null) {return undefined;} else {_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;}} else if ('value' in desc) {return desc.value;} else {var getter = desc.get;if (getter === undefined) {return undefined;}return getter.call(receiver);}}};function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass, superClass) {if (typeof superClass !== 'function' && superClass !== null) {throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var _react = require(
+'use strict';var _createClass = (function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ('value' in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};})();var _get = function get(_x, _x2, _x3) {var _again = true;_function: while (_again) {var object = _x, property = _x2, receiver = _x3;_again = false;if (object === null) object = Function.prototype;var desc = Object.getOwnPropertyDescriptor(object, property);if (desc === undefined) {var parent = Object.getPrototypeOf(object);if (parent === null) {return undefined;} else {_x = parent;_x2 = property;_x3 = receiver;_again = true;desc = parent = undefined;continue _function;}} else if ('value' in desc) {return desc.value;} else {var getter = desc.get;if (getter === undefined) {return undefined;}return getter.call(receiver);}}};function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass, superClass) {if (typeof superClass !== 'function' && superClass !== null) {throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var _ShimDependencies = require(
 
 
 
 
 
-'react');var _react2 = _interopRequireDefault(_react);var _Controls = require(
+'./ShimDependencies');var _Controls = require(
 './Controls');var _Controls2 = _interopRequireDefault(_Controls);var _Menu = require(
 './Menu');var _Menu2 = _interopRequireDefault(_Menu);var _VisualizationWrapper = require(
 './VisualizationWrapper');var _VisualizationWrapper2 = _interopRequireDefault(_VisualizationWrapper);var 
@@ -97,7 +97,7 @@ Root = (function (_React$Component) {_inherits(Root, _React$Component);
       //access this.trackReactElements with string key, flow complains)
       var intKey = parseInt(key);
       var trackEl = 
-      _react2['default'].createElement(_VisualizationWrapper2['default'], { visualization: track.visualization, 
+      _ShimDependencies.React.createElement(_VisualizationWrapper2['default'], { visualization: track.visualization, 
         range: this.state.range, 
         onRangeChange: this.handleRangeChange.bind(this), 
         source: track.source, 
@@ -113,7 +113,7 @@ Root = (function (_React$Component) {_inherits(Root, _React$Component);
       // $FlowIgnore: TODO remove flow suppression
       if (track.visualization.component.getOptionsMenu) {
         gearIcon = 
-        _react2['default'].createElement('span', { ref: 'gear-' + key, 
+        _ShimDependencies.React.createElement('span', { ref: 'gear-' + key, 
           className: 'gear', 
           onClick: this.toggleSettingsMenu.bind(this, key) }, '⚙');}
 
@@ -135,8 +135,8 @@ Root = (function (_React$Component) {_inherits(Root, _React$Component);
         // $FlowIgnore: TODO remove flow suppression
         var items = track.visualization.component.getOptionsMenu(track.visualization.options);
         settingsMenu = 
-        _react2['default'].createElement('div', { className: 'menu-container', style: menuStyle }, 
-        _react2['default'].createElement(_Menu2['default'], { header: trackName, items: items, onSelect: this.handleSelectOption.bind(this, key) }));}
+        _ShimDependencies.React.createElement('div', { className: 'menu-container', style: menuStyle }, 
+        _ShimDependencies.React.createElement(_Menu2['default'], { header: trackName, items: items, onSelect: this.handleSelectOption.bind(this, key) }));}
 
 
 
@@ -144,14 +144,14 @@ Root = (function (_React$Component) {_inherits(Root, _React$Component);
       var className = ['track', track.visualization.component.displayName || '', track.track.cssClass || ''].join(' ');
 
       return (
-        _react2['default'].createElement('div', { key: key, className: className }, 
-        _react2['default'].createElement('div', { className: 'track-label' }, 
-        _react2['default'].createElement('span', null, trackName), 
-        _react2['default'].createElement('br', null), 
+        _ShimDependencies.React.createElement('div', { key: key, className: className }, 
+        _ShimDependencies.React.createElement('div', { className: 'track-label' }, 
+        _ShimDependencies.React.createElement('span', null, trackName), 
+        _ShimDependencies.React.createElement('br', null), 
         gearIcon, 
         settingsMenu), 
 
-        _react2['default'].createElement('div', { className: 'track-content' }, 
+        _ShimDependencies.React.createElement('div', { className: 'track-content' }, 
         trackEl)));} }, { key: 'render', value: 
 
 
@@ -162,17 +162,17 @@ Root = (function (_React$Component) {_inherits(Root, _React$Component);
       // TODO: use a better key than index.
       var trackEls = this.props.tracks.map(function (t, i) {return _this4.makeDivForTrack('' + i, t);});
       return (
-        _react2['default'].createElement('div', { className: 'pileup-root' }, 
+        _ShimDependencies.React.createElement('div', { className: 'pileup-root' }, 
 
         this.props.controlsOff ? 
         null : 
 
-        _react2['default'].createElement('div', { className: 'track controls' }, 
-        _react2['default'].createElement('div', { className: 'track-label' }, ' '), 
+        _ShimDependencies.React.createElement('div', { className: 'track controls' }, 
+        _ShimDependencies.React.createElement('div', { className: 'track-label' }, ' '), 
 
 
-        _react2['default'].createElement('div', { className: 'track-content' }, 
-        _react2['default'].createElement(_Controls2['default'], { contigList: this.state.contigList, 
+        _ShimDependencies.React.createElement('div', { className: 'track-content' }, 
+        _ShimDependencies.React.createElement(_Controls2['default'], { contigList: this.state.contigList, 
           range: this.state.range, 
           onChange: this.handleRangeChange.bind(this) }))), 
 
@@ -189,7 +189,7 @@ Root = (function (_React$Component) {_inherits(Root, _React$Component);
         for (var i = 0; i < this.props.tracks.length; i++) {
           this.trackReactElements[i].setState({ updateSize: this.state.updateSize });}
 
-        this.state.updateSize = false;}} }]);return Root;})(_react2['default'].Component);
+        this.state.updateSize = false;}} }]);return Root;})(_ShimDependencies.React.Component);
 
 
 
